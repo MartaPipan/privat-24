@@ -1,0 +1,129 @@
+:root {
+    --logo-size: 44px;
+    --header--height: calc(var(--logo-size) * 1.5);
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav,
+ul,
+li {
+    display: inline-block;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: var(--header--height);
+    padding-top: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px #999;
+}
+
+.general-size {
+    min-width: 520px;
+    max-width: 1264px;
+    width: 100%;
+    padding: 0 1em;
+    margin: auto;
+}
+.vertical-align{
+display: flex;
+align-items: center;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: calc(var(--logo-size) / 2);
+    line-height: var(--logo-size);
+}
+
+.logo::after {
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    background-image: linear-gradient(0, yellow 50%, blue 50%);
+    position: absolute;
+    z-index: -1;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+}
+
+.search {
+    position: relative;
+    display: inline-block;
+    width: calc(var(--logo-size) * 0.8);
+    height: calc(var(--logo-size) * 0.8);
+    border-radius: 50%;
+    background-image: url(./assets/icons/magnify.svg);
+    background-repeat:no-repeat;
+    background-size: 70%;
+    background-position: center;
+    background-color:aqua;
+    
+}
+
+.header-nav {}
+
+.header-nav-list {}
+
+.header-nav-item {}
+
+.header-nav-link {}
+
+.main {
+    flex: 1 0 auto;
+    padding-top: var(--header-height);
+}
+
+.footer {
+    text-align: center;
+}
+
+.hero {
+    width: 80px;
+    height: 94px;
+    background-image: url(./assets/images/hero_spritesheet.png);
+    background-repeat: no-repeat;
+    background-position-y: -94px;
+    /* background-position-x: 0; */
+}
+
+.hero:hover {
+    animation: walk 1s steps(6) infinite;
+}
+
+@keyframes walk {
+    100% {
+        background-position-x: -480px;
+    }
+}
